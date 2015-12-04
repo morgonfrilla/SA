@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Sörenssons Army!</title>
+		<meta charset="utf-8"/>
+		<link type="text/css" rel="stylesheet" href="stylesheet.css"/>
+
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<link rel="stylesheet" href="//code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css">
+		<script src="//code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
+		<script type="text/javascript" src="jquery.diyslider.min.js"></script>
+		<script type="text/javascript" src="stockList.js"></script>
+		<script type="text/javascript" src="ajax.js"></script>
+		<script type="text/javascript" src="Tablesorter/jquery.tablesorter.js"></script> 
+		
+
+		<div id="header"></div>
+	</head>
+
+	<body>
+		<div id="main">
+
+			<div class="slider" >
+			    <div><!-- A mandatory div used by the slider -->
+			        <!-- Each div below is considered a slide -->
+			        <div>
+			        	<h1>Start</h1>
+			        	<h2>Portfölj</h2>
+			        	<table id="portfolioTable" class="tablesorter">
+							<thead> 
+								<tr> 
+							    <th>Namn</th> 
+							    <th>Antal</th> 
+							    <th>Anskaffningskurs</th> 
+							    <th>Anskaffningsvärde</th> 
+							    <th>Dagspris</th>
+							    <th>Utveckling i SEK</th> 
+							    <th>Utveckling i procent</th> 
+								</tr> 
+							</thead>
+							<tbody>
+							</tbody>
+			        	</table> 
+
+			        </div>
+
+			        <div id="stockDiv">
+			        	<table id="stockTable" class="tablesorter">
+							<thead> 
+								<tr> 
+							    <th>Name</th> 
+							    <th>Symbol</th> 
+							    <th>Pris</th> 
+							    <th>ISIN</th> 
+							    <th>Sektor</th> 
+							    <th>ICB-kod</th>
+								</tr> 
+							</thead>
+							<tbody>
+							</tbody>
+			        	</table> 
+			        </div>
+
+					<div>
+						<h1>Möten</h1>
+
+						<button id="meetingFormButton" type="button" onclick="">Skapa nytt möte</button>
+
+						<p>Bacon ipsum dolor sit amet prosciutto strip steak flank tongue bacon boudin pork filet mignon sirloin pig bresaola cow frankfurter capicola ball tip. Shankle venison prosciutto biltong ribeye drumstick short loin corned beef bacon porchetta pork loin chicken beef chuck. Ball tip chicken shoulder meatball sausage meatloaf turducken jowl pastrami. Kielbasa tongue pancetta, jowl bresaola kevin ham pig turducken. Meatball kevin brisket, turkey chuck boudin ground round short loin. Capicola ham hock andouille, swine pork chop short ribs jerky.</p>
+
+						<p>Ham spare ribs pork chop, sirloin corned beef chuck brisket shankle. Corned beef sausage t-bone, frankfurter pork belly landjaeger ham hock meatloaf boudin. T-bone frankfurter capicola, porchetta shank salami strip steak leberkas jowl ground round sirloin. Sirloin boudin filet mignon fatback hamburger flank spare ribs ham ball tip pig. Turkey sausage beef ribs, brisket short loin salami ribeye venison pork pig rump. Short ribs ham shank corned beef, chicken fatback chuck andouille filet mignon capicola. Tail hamburger landjaeger andouille pork belly prosciutto brisket.</p>
+
+						<p>Shank ham porchetta tail flank leberkas ground round. Turducken jerky frankfurter, brisket corned beef ground round fatback kevin pancetta spare ribs pork loin. Jowl ham hock kevin chuck corned beef pancetta beef ribs. Tongue pork belly pork kielbasa, spare ribs t-bone brisket. Kevin brisket sausage fatback ham ball tip sirloin short ribs kielbasa. Andouille doner rump jerky sirloin, venison pork belly meatloaf cow kevin short loin filet mignon pancetta.</p>
+
+						<p>Jowl venison chuck shoulder, meatloaf bacon boudin strip steak swine leberkas frankfurter biltong pork chop. Ham hock jowl rump boudin landjaeger salami. Pork loin ham pork belly, tail capicola pork shankle brisket ground round shoulder sausage tenderloin porchetta ribeye. Ham ribeye turkey tenderloin.</p>
+
+						<p>Swine chuck drumstick spare ribs pork loin venison, kielbasa strip steak turkey ham hock. Biltong doner venison, tail cow swine ball tip short loin. Tenderloin sirloin pork loin frankfurter. Turkey chicken pancetta pig flank turducken, tongue drumstick fatback.</p>
+
+						<p>Bacon ipsum dolor sit amet prosciutto strip steak flank tongue bacon boudin pork filet mignon sirloin pig bresaola cow frankfurter capicola ball tip. Shankle venison prosciutto biltong ribeye drumstick short loin corned beef bacon porchetta pork loin chicken beef chuck. Ball tip chicken shoulder meatball sausage meatloaf turducken jowl pastrami. Kielbasa tongue pancetta, jowl bresaola kevin ham pig turducken. Meatball kevin brisket, turkey chuck boudin ground round short loin. Capicola ham hock andouille, swine pork chop short ribs jerky.</p>
+
+						<p>Ham spare ribs pork chop, sirloin corned beef chuck brisket shankle. Corned beef sausage t-bone, frankfurter pork belly landjaeger ham hock meatloaf boudin. T-bone frankfurter capicola, porchetta shank salami strip steak leberkas jowl ground round sirloin. Sirloin boudin filet mignon fatback hamburger flank spare ribs ham ball tip pig. Turkey sausage beef ribs, brisket short loin salami ribeye venison pork pig rump. Short ribs ham shank corned beef, chicken fatback chuck andouille filet mignon capicola. Tail hamburger landjaeger andouille pork belly prosciutto brisket.</p>
+
+						<p>Shank ham porchetta tail flank leberkas ground round. Turducken jerky frankfurter, brisket corned beef ground round fatback kevin pancetta spare ribs pork loin. Jowl ham hock kevin chuck corned beef pancetta beef ribs. Tongue pork belly pork kielbasa, spare ribs t-bone brisket. Kevin brisket sausage fatback ham ball tip sirloin short ribs kielbasa. Andouille doner rump jerky sirloin, venison pork belly meatloaf cow kevin short loin filet mignon pancetta.</p>
+
+						<p>Jowl venison chuck shoulder, meatloaf bacon boudin strip steak swine leberkas frankfurter biltong pork chop. Ham hock jowl rump boudin landjaeger salami. Pork loin ham pork belly, tail capicola pork shankle brisket ground round shoulder sausage tenderloin porchetta ribeye. Ham ribeye turkey tenderloin.</p>
+
+						<p>Swine chuck drumstick spare ribs pork loin venison, kielbasa strip steak turkey ham hock. Biltong doner venison, tail cow swine ball tip short loin. Tenderloin sirloin pork loin frankfurter. Turkey chicken pancetta pig flank turducken, tongue drumstick fatback.</p>
+												
+						<p>Bacon ipsum dolor sit amet prosciutto strip steak flank tongue bacon boudin pork filet mignon sirloin pig bresaola cow frankfurter capicola ball tip. Shankle venison prosciutto biltong ribeye drumstick short loin corned beef bacon porchetta pork loin chicken beef chuck. Ball tip chicken shoulder meatball sausage meatloaf turducken jowl pastrami. Kielbasa tongue pancetta, jowl bresaola kevin ham pig turducken. Meatball kevin brisket, turkey chuck boudin ground round short loin. Capicola ham hock andouille, swine pork chop short ribs jerky.</p>
+
+						<p>Ham spare ribs pork chop, sirloin corned beef chuck brisket shankle. Corned beef sausage t-bone, frankfurter pork belly landjaeger ham hock meatloaf boudin. T-bone frankfurter capicola, porchetta shank salami strip steak leberkas jowl ground round sirloin. Sirloin boudin filet mignon fatback hamburger flank spare ribs ham ball tip pig. Turkey sausage beef ribs, brisket short loin salami ribeye venison pork pig rump. Short ribs ham shank corned beef, chicken fatback chuck andouille filet mignon capicola. Tail hamburger landjaeger andouille pork belly prosciutto brisket.</p>
+
+						<p>Shank ham porchetta tail flank leberkas ground round. Turducken jerky frankfurter, brisket corned beef ground round fatback kevin pancetta spare ribs pork loin. Jowl ham hock kevin chuck corned beef pancetta beef ribs. Tongue pork belly pork kielbasa, spare ribs t-bone brisket. Kevin brisket sausage fatback ham ball tip sirloin short ribs kielbasa. Andouille doner rump jerky sirloin, venison pork belly meatloaf cow kevin short loin filet mignon pancetta.</p>
+
+						<p>Jowl venison chuck shoulder, meatloaf bacon boudin strip steak swine leberkas frankfurter biltong pork chop. Ham hock jowl rump boudin landjaeger salami. Pork loin ham pork belly, tail capicola pork shankle brisket ground round shoulder sausage tenderloin porchetta ribeye. Ham ribeye turkey tenderloin.</p>
+
+						<p>Swine chuck drumstick spare ribs pork loin venison, kielbasa strip steak turkey ham hock. Biltong doner venison, tail cow swine ball tip short loin. Tenderloin sirloin pork loin frankfurter. Turkey chicken pancetta pig flank turducken, tongue drumstick fatback.</p>
+						
+						<p>Bacon ipsum dolor sit amet prosciutto strip steak flank tongue bacon boudin pork filet mignon sirloin pig bresaola cow frankfurter capicola ball tip. Shankle venison prosciutto biltong ribeye drumstick short loin corned beef bacon porchetta pork loin chicken beef chuck. Ball tip chicken shoulder meatball sausage meatloaf turducken jowl pastrami. Kielbasa tongue pancetta, jowl bresaola kevin ham pig turducken. Meatball kevin brisket, turkey chuck boudin ground round short loin. Capicola ham hock andouille, swine pork chop short ribs jerky.</p>
+
+						<p>Ham spare ribs pork chop, sirloin corned beef chuck brisket shankle. Corned beef sausage t-bone, frankfurter pork belly landjaeger ham hock meatloaf boudin. T-bone frankfurter capicola, porchetta shank salami strip steak leberkas jowl ground round sirloin. Sirloin boudin filet mignon fatback hamburger flank spare ribs ham ball tip pig. Turkey sausage beef ribs, brisket short loin salami ribeye venison pork pig rump. Short ribs ham shank corned beef, chicken fatback chuck andouille filet mignon capicola. Tail hamburger landjaeger andouille pork belly prosciutto brisket.</p>
+
+						<p>Shank ham porchetta tail flank leberkas ground round. Turducken jerky frankfurter, brisket corned beef ground round fatback kevin pancetta spare ribs pork loin. Jowl ham hock kevin chuck corned beef pancetta beef ribs. Tongue pork belly pork kielbasa, spare ribs t-bone brisket. Kevin brisket sausage fatback ham ball tip sirloin short ribs kielbasa. Andouille doner rump jerky sirloin, venison pork belly meatloaf cow kevin short loin filet mignon pancetta.</p>
+
+						<p>Jowl venison chuck shoulder, meatloaf bacon boudin strip steak swine leberkas frankfurter biltong pork chop. Ham hock jowl rump boudin landjaeger salami. Pork loin ham pork belly, tail capicola pork shankle brisket ground round shoulder sausage tenderloin porchetta ribeye. Ham ribeye turkey tenderloin.</p>
+
+						<p>Swine chuck drumstick spare ribs pork loin venison, kielbasa strip steak turkey ham hock. Biltong doner venison, tail cow swine ball tip short loin. Tenderloin sirloin pork loin frankfurter. Turkey chicken pancetta pig flank turducken, tongue drumstick fatback.</p>
+					</div>
+
+					<div>
+						<h1>Stadgar</h1>
+					</div>
+
+					<div>
+						<h1>Medlemmar</h1>
+					</div>
+
+					<div>
+						<h1>Nytt möte</h1>
+						<form>
+						    <fieldset>
+						    	<h4>Deltagare</h4>
+						   		<input type="checkbox" name="deltagare" value="FD">Fredrik Dahlin	
+						   		<input type="checkbox" name="deltagare" value="MJ">Magnus Johnson	
+								<input type="checkbox" name="deltagare" value="PH">Patrik Henriksson<br>
+						   		<input type="checkbox" name="deltagare" value="JL">Julia Lindberg
+						   		<input type="checkbox" name="deltagare" value="EL">Emilie Ljungqvist	
+								<input type="checkbox" name="deltagare" value="JS">Johanna Sjögren<br>	
+
+								<h4>Anteckningar</h4>
+								<textarea rows="4" cols="50"></textarea>
+
+								<h4>Aktier</h4>
+								<div class="ui-widget">
+										<label for="tags" class="sidebar-text">Tags: </label>
+										<input id="tags">
+									</div>
+								
+
+						        <!-- Allow form submission with keyboard without duplicating the dialog button -->
+						        <input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
+						    </fieldset>
+						  </form>
+
+						  <div id="meetingStock"></div>
+					</div>
+
+			    </div>
+			</div>
+
+			<div id="footer">
+				<p>
+				    <span class="slider-direction-buttons">
+				        <a href="#" data-toslide="start">START</a>
+				        <a href="#" data-toslide="aktier">AKTIER</a>
+				        <a href="#" data-toslide="möten">MÖTEN</a>
+				        <a href="#" data-toslide="stadgar">STADGAR</a>
+				        <a href="#" data-toslide="medlemmar">MEDLEMMAR</a>
+				        <a class='newMeeting' href="#" data-toslide="nytt_möte">NYTT MÖTE</a>
+				    </span>
+				</p>
+			</div>
+
+			<script type="text/javascript" src="slider.js"></script>
+
+		</div>
+	</body>
+</html>
