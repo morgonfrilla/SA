@@ -38,5 +38,4 @@ var currentWidth = $('#main').width()*0.98;
 $(".slider").diyslider({
 	width: 1.03*currentWidth,
 	height: 0.525*currentHeight,
-	loop: false; 
 });

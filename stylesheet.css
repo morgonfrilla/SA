@@ -10,18 +10,11 @@
 	border-bottom: 2px solid black;
 }
 
-
-body {
-	overflow: hidden;
-}
-
-
 #main {
 	margin-top: 3%;
 	padding: 10px;
 	z-index: 1;
 }
-
 
 body {
 	overflow: hidden;

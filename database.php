@@ -253,16 +253,15 @@
    	*/
    	function getStockInfo($con){
    		
-   	 	$sql = "SELECT * FROM `stockInfo` JOIN stocks ON stockInfo.Ysymbol = stocks.Ysymbol;";
+   	 	$sql = "SELECT stocks.Name as Name, stocks.Symbol as Symbol, stocks.Ysymbol as Ysymbol, Valuta as Valuta, ISIN as ISIN, Sektor as Sektor, ICB as ICB, Owned as Owned, BuyPrice as BuyPrice, Category as Category, Ask as Ask, AskRealtime as AskRealtime, AverageDailyVolume as AverageDailyVolume ,Bid as Bid, BidRealtime as BidRealtime,`Change` as `Change`, ChangeFromFiftydayMovingAverage as ChangeFromFiftydayMovingAverage, ChangeFromTwoHundreddayMovingAverage as ChangeFromTwoHundreddayMovingAverage, ChangeFromYearHigh as ChangeFromYearHigh, ChangeFromYearLow as ChangeFromYearLow, ChangePercentRealtime as ChangePercentRealtime, ChangeRealtime as ChangeRealtime, Change_PercentChange as Change_PercentChange, ChangeinPercent as ChangeinPercent, DaysHigh as DaysHigh, DaysLow as DaysLow, DividendPayDate as DividendPayDate, DividendShare as DividendShare, DividendYield as DividendYield, LastTradeDate as LastTradeDate, LastTradePriceOnly as LastTradePriceOnly, Open as Open, PercebtChangeFromYearHigh as PercebtChangeFromYearHigh, PercentChange as PercentChange, PercentChangeFromFiftydayMovingAverage as PercentChangeFromFiftydayMovingAverage, PercentChangeFromTwoHundreddayMovingAverage as PercentChangeFromTwoHundreddayMovingAverage, PercentChangeFromYearLow as PercentChangeFromYearLow, PreviousClose as PreviousClose, Volume as Volume, YearHigh as YearHigh, YearLow as YearLow FROM `stockInfo` JOIN stocks ON stockInfo.Ysymbol = stocks.Ysymbol;";
 		$result = mysqli_query($con,$sql);
 
    		$jsonArray = [];
 
    		while($row = mysqli_fetch_array($result)) {
+   			echo get_object_vars($row)."\n";
    			array_push($jsonArray, $row);
    		}
-   		
-   		var_dump($jsonArray);
 
 		echo json_encode($jsonArray);
    	}
@@ -311,7 +310,6 @@
 	        	break;
 
             case 'getStockInfo':
-            	var_dump("Database getStockInfo");
 	        	getStockInfo($con);
 	        	break;
 
@@ -320,4 +318,5 @@
 
 	mysqli_close($con);
 ?>
-
+/*
+Name as Name, stocks.Symbol as Symbol, stocks.Ysymbol as Ysymbol, Valuta as Valuta, ISIN as ISIN, Sektor as Sektor, ICB as ICB, Owned as Owned, BuyPrice as BuyPrice, Category as Category, Ask as Ask, AskRealtime as AskRealtime, AverageDailyVolume as AverageDailyVolume ,Bid as Bid, BidRealtime as BidRealtime,`Change` as Change, ChangeFromFiftydayMovingAverage as ChangeFromFiftydayMovingAverage, ChangeFromTwoHundreddayMovingAverage as ChangeFromTwoHundreddayMovingAverage, ChangeFromYearHigh as ChangeFromYearHigh, ChangeFromYearLow as ChangeFromYearLow, ChangePercentRealtime as ChangePercentRealtime, ChangeRealtime as ChangeRealtime, Change_PercentChange as Change_PercentChange, ChangeinPercent as ChangeinPercent, DaysHigh as DaysHigh, DaysLow as DaysLow, DividendPayDate as DividendPayDate, DividendShare as DividendShare, DividendYield as DividendYield, LastTradeDate as LastTradeDate, LastTradePriceOnly as LastTradePriceOnly, Open as Open, PercebtChangeFromYearHigh as PercebtChangeFromYearHigh, PercentChange as PercentChange, PercentChangeFromFiftydayMovingAverage as PercentChangeFromFiftydayMovingAverage, PercentChangeFromTwoHundreddayMovingAverage as PercentChangeFromTwoHundreddayMovingAverage, PercentChangeFromYearLow as PercentChangeFromYearLow, PreviousClose as PreviousClose, Volume as Volume, YearHigh as YearHigh, YearLow as YearLow*/

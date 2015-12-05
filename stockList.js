@@ -7,7 +7,7 @@ $(document).ready(function(){
 	var symbolString ='';
 
 	$('#stockTable').tablesorter();	
-	getStocksInfo();
+	//getStockInfo();
 	//insertStock(data[i].name, data[i].symbol, data[i].y_symbol, data[i].valuta, data[i].isin, data[i].sektor, data[i].icb, 0);
 	$("#tags").autocomplete({source: items});	
 
@@ -16,27 +16,21 @@ $(document).ready(function(){
 	/*
 	Hämtar färsk information om varje aktie. 
 	*/
-   	function getStocksInfo(){
-		$.getJSON("database.php",{action:'getStockInfo'})
-			.done(function( data ) {
-				console.log("DONE");
+   	function getStockInfo(json){
 
-				$.each( data, function( i, item ) {
-			        console.log(data[i]);
+		$.getJSON( 'database.php', {action: "getStockInfo"})
+		.done(function( data ) {
 
-	        		//items.push(data[i].name);
-					//stocks[data[i].y_symbol] = data[i];
-					//nameDict[data[i].name] = data[i].y_symbol;
-			    });
-		      	
-			})
-		  	.fail(function( jqxhr, textStatus, error ) {
-			    var err = textStatus + ", " + error;
-			    console.log( "Request Failed: " + err );
-			});
+			for (i = 0; i<data.length; i++) {
+				//console.log(data[i]);
+			}
+
+		});
 
 
-
+		//items.push(data[i].name);
+		//stocks[data[i].y_symbol] = data[i];
+		//nameDict[data[i].name] = data[i].y_symbol;
 
 		//stocks[data.query.results.quote.Symbol].info = data.query.results.quote;
 		//var temp = stocks[data.query.results.quote.Symbol];
@@ -95,5 +89,14 @@ $(document).ready(function(){
 	        }
 	    });
 	};
+
+	$.ajax({
+        type: "GET",
+        url: "database.php",
+        data: { action:'getStockInfo'},
+        success: function(msg){
+            console.log(msg);
+        }
+    });
 });
 
